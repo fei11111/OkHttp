@@ -46,7 +46,7 @@ public class OkHttpManager {
     }
 
     public Response execute(String url, long start, long end) throws IOException {
-        Request request = new Request.Builder().url(url).addHeader("Range", start + "-" + end).build();
+        Request request = new Request.Builder().url(url).addHeader("Range", "bytes=" + start + "-" + end).build();
         Call call = okHttpClient.newCall(request);
         return call.execute();
     }

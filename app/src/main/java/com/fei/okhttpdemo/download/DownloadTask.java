@@ -73,6 +73,9 @@ public class DownloadTask {
                         successCount++;
                         if (successCount == THREAD_SIZE) {
                             callBack.onSuccess(file);
+                            DownloadDispatcher.getDispatcher().recyclerTask(DownloadTask.this);
+
+                            // 清除数据库的这个文件下载存储
                         }
                     }
                 }
@@ -82,8 +85,8 @@ public class DownloadTask {
                     callBack.onFail(e);
                 }
             });
-
-            executorService().submit(runnable);
+            //线程池执行
+            executorService().execute(runnable);
         }
     }
 
