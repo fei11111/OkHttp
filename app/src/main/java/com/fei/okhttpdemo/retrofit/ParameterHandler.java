@@ -25,8 +25,6 @@ public interface ParameterHandler<T> {
 
         @Override
         public void apply(RequestBuilder requestBuilder, T value) {
-//            Gson gson = new Gson();
-//            String s = gson.toJson(value, String.class);
             requestBuilder.addQueryName(key,value.toString());
         }
     }
