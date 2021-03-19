@@ -41,7 +41,7 @@ public interface ParameterHandler<T> {
         @Override
         public void apply(RequestBuilder requestBuilder, T value) {
 
-            requestBuilder.addQueryName(key,String.valueOf(value));
+            requestBuilder.addFieldMap(key,value);
         }
     }
 

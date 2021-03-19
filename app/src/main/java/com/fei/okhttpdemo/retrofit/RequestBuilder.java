@@ -47,4 +47,8 @@ public class RequestBuilder {
     public void addQueryName(String key, String value) {
         httpUrl.addQueryParameter(key, value);
     }
+
+    public void addFieldMap(String str,Object obj){
+
+    }
 }
