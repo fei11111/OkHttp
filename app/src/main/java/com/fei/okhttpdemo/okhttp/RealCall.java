@@ -67,6 +67,7 @@ public class RealCall implements Call {
             try {
                 URL url = new URL(request.url);
                 HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
+
                 // https 的一些操作
                 // httpsURLConnection.setHostnameVerifier();
                 // urlConnection.setReadTimeout();
